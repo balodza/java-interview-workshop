@@ -6,7 +6,7 @@ import java.util.List;
 public class WildcardList {
     public static void main(String[] args) {
         List<? extends A> list = new ArrayList<>();
-        list.add(new A());
+        //list.add(new A()); uncomment to see problem
         List<A> casted = (List<A>) list;
         casted.add(new A());
         casted.add(new B());
@@ -16,7 +16,7 @@ public class WildcardList {
     }
     
     public static void f(List<? extends A> list) {
-        list.add(new A());
+        //list.add(new A()); uncomment to see problem
     }
     
     static class A {}
