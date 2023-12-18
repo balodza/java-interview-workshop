@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class Main {
+public class DeserializationIssueDemo {
     public static final String FILE_NAME = "singleton.txt";
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
