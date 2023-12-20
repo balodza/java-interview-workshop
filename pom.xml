@@ -7,9 +7,14 @@
     <groupId>com.balodza</groupId>
     <artifactId>java-interview-workshop</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <name>java-interview-workshop</name>
+    <packaging>pom</packaging>
 
+    <modules>
+        <module>generic-samples</module>
+        <module>spring-cloud-samples</module>
+    </modules>
+    
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -39,6 +44,14 @@
             <artifactId>lombok</artifactId>
             <version>1.18.30</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
         
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -97,5 +110,5 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-    </build>
+    </build>    
 </project>
