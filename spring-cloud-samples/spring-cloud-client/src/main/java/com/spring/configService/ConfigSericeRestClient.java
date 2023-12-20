@@ -5,28 +5,30 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
 public class ConfigSericeRestClient {
     
-    @Value("${user.role}")
-    private String role;
+    @Value("${app.name}")
+    private String appName;
 
-    @Value("${user.password}")
-    private String password;
+    @Value("${app.description}")
+    private String appDescription;
 
     public static void main(String[] args) {
         SpringApplication.run(ConfigSericeRestClient.class, args);
     }
 
     /**
-     * call http://localhost:8887/user/myNameIsBob
+     * call http://localhost:8887/app/info
      */
-    @GetMapping(value = "/user/{username}", produces = MediaType.TEXT_PLAIN_VALUE)
-    public String whoami(@PathVariable("username") String username) {
-        return String.format("Hello %s! You are a(n) %s and your password is '%s'.\n", username, role, password);
+    @GetMapping(value = "/app/info", produces = MediaType.APPLICATION_JSON_VALUE)
+    public AppInfo appInfo() {
+        final AppInfo appInfo = new AppInfo();
+        appInfo.setName(appName);
+        appInfo.setDescription(appDescription);
+        return appInfo;
     }
 }

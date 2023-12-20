@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>spring-rest-service</artifactId>
+    <artifactId>spring-cloud-client</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -37,6 +37,5 @@
             </plugin>
         </plugins>
     </build>
-
     
 </project>
