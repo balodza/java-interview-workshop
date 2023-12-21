@@ -6,7 +6,9 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 
 /**
  * https://www.baeldung.com/spring-cloud-configuration
+ * 
  * Calls :
+ * http://localhost:8888/spring-rest-service/development
  * /{application}/{profile}[/{label}]
  * /{application}-{profile}.yml
  * /{label}/{application}-{profile}.yml
